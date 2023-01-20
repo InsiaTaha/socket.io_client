@@ -12,13 +12,26 @@ function App() {
        setResponse(data)
       });
     }, []);
-
+    // useEffect(() => {
+    //   socket.emit("test",{msg:"jashkdjhask"})
+    //   socket.on("hellotest", data => {
+    //    setResponse(data)
+    //   });
+    // }, []);
+    
+    // const getSocketID=()=>{
+    //   socket.emit("test",{msg:"jashkdjhask"})
+    //   socket.on("getUserSocketID", data => {
+    //     setuserSocketID(data)
+    //    });
+    // }
     const getSocketID=()=>{
-      alert("sadgkjas")
-      socket.on("getUserSocketID", data => {
-        setuserSocketID(data)
-       });
+      socket.emit('Click');
+      console.log("cllick")
     }
+    socket.on('getUserSocketID', function(data){
+      setuserSocketID(data)
+    });
   
     return (
       <div>
